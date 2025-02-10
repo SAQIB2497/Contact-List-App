@@ -1,0 +1,35 @@
+.contact-list{
+    height: 100%;
+    width: 100%;
+    margin: 7px;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #d7dcdf;
+}
+
+.contact-list p,
+.contact-list h2,
+.contact-list .fa-solid {
+    color: #646464;
+}
+
+.contact-list .fa-solid {
+    margin-right: 15px;
+}
+
+.contact-list table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.contact-list th,
+.contact-list td{
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.contact-list .profile-img-box {
+    margin-right: 0px;
+    margin-left: 10px;
+}

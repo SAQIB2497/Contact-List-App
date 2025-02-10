@@ -1,0 +1,28 @@
+ul {
+    width: 100%;
+    padding: 3px 0;
+}
+
+ul li {
+    width: 100%;
+    list-style: none;
+}
+
+ul li:hover{
+    background-color: #e3e3e35b;
+    border-left: 2px solid #f7f7f7;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: default;
+    padding: 8px;
+}
+
+ul .fa-solid {
+color: #f7f7f7;
+margin-right:18px;
+}

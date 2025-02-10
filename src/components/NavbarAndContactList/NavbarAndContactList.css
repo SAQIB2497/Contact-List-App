@@ -1,0 +1,8 @@
+.navbar-and-list{
+    width: 100%;
+    height: 445px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}

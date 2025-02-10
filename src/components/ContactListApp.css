@@ -1,0 +1,34 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #9178ff;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+p,
+h2 {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #f7f7f7;
+}
+
+p {
+  color: #d7dcdf;
+}
+
+.contact-list-app {
+  width: 750px;
+  margin: 0% auto;
+  border-radius: 3px;
+  background-color: #f7f7f7;
+}
