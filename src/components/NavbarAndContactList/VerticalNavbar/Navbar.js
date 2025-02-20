@@ -29,7 +29,7 @@ const Navbar = () => {
                     </div>
                 </a>
             </li>
-            <li>
+            {/* <li>
                 <a href='' className='link'>
                     <i className='fa-solid fa-heart'></i>
                     <div>
@@ -37,7 +37,7 @@ const Navbar = () => {
                         <p>10 contacts</p>
                     </div>
                 </a>
-            </li>
+            </li> */}
         </ul>
     )
 }

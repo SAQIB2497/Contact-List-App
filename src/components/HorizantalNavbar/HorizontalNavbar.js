@@ -12,7 +12,7 @@ const HorizontalNavbar = () => {
         <h2>John Wan</h2>
       </div>
       <form className='search-box'>
-        <input type='text' placeholder='John Wan' />
+        <input type='text' placeholder='Search your name' />
         <Button name='Search' />
       </form>
     </div>
