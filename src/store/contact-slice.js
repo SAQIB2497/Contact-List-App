@@ -7,37 +7,28 @@ const initialState = {
         surname: "",
         tel: ""
     },
-    totalContacts: 0
+    totalContacts: 0,
+    contactList: []
 }
 
 const contactSlice = createSlice({
     name: "contactList",
     initialState,
     reducers: {
-
-       
         setExistingContactKey: (state, action) => {
             state.key = action.payload;
         },
         updateContact: (state, action) => {
-            const { key, name, surname, tel } = action.payload;
-            fetch(`https://contact-list-app-ec02e-default-rtdb.asia-southeast1.firebasedatabase.app/${key}.json`,
-                {
-                    method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ name, surname, tel })
-                }).catch(error => console.log(error));
             state.key = "";
         },
         fetchTotalContacts: (state, action) => {
-            state.totalContacts = Object.keys(action.payload).length
-
+            state.totalContacts = action.payload ? Object.keys(action.payload).length : 0;
+        },
+        setContactList: (state, action) => {
+            state.contactList = action.payload;
         }
     }
 })
 
 export const contactListActions = contactSlice.actions;
-
-export default contactSlice; 
+export default contactSlice;

@@ -1,27 +1,29 @@
-import React, { useEffect, useState } from 'react'
-import "./Navbar.css";
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { contactListActions } from '../../../store/contact-slice';
+import "./Navbar.css";
 
 const Navbar = () => {
     const dispatch = useDispatch();
-
     const totalContacts = useSelector(state => state.contact.totalContacts);
+
     useEffect(() => {
-        const fetchTotalContacts = () => {
-            fetch("https://contact-list-app-ec02e-default-rtdb.asia-southeast1.firebasedatabase.app/contact-list.json")
-                .then(res => res.json())
-                .then(data => {
-                    dispatch(contactListActions.fetchTotalContacts(data))
-                })
+        const fetchTotalContacts = async () => {
+            try {
+                const res = await fetch("https://contact-list-app-ec02e-default-rtdb.asia-southeast1.firebasedatabase.app/contact-list.json");
+                const data = await res.json();
+                dispatch(contactListActions.fetchTotalContacts(data));
+            } catch (error) {
+                console.log(error);
+            }
         }
         fetchTotalContacts();
-    }, [])
+    }, [dispatch]);
 
     return (
         <ul>
             <li>
-                <a href='' className='link'>
+                <a href='#!' className='link'>
                     <i className='fa-solid fa-address-book'></i>
                     <div>
                         <h2>All contacts</h2>
@@ -29,17 +31,8 @@ const Navbar = () => {
                     </div>
                 </a>
             </li>
-            {/* <li>
-                <a href='' className='link'>
-                    <i className='fa-solid fa-heart'></i>
-                    <div>
-                        <h2>Favourites</h2>
-                        <p>10 contacts</p>
-                    </div>
-                </a>
-            </li> */}
         </ul>
     )
 }
 
-export default Navbar
+export default Navbar;
